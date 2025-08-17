@@ -69,19 +69,19 @@ flowchart TD
 
 # 🤖 Model & Embedding Choices
 
-**Embedding Model:**
+Embedding Model:
   **all-MiniLM-L6-v2**
    . Produces 384-d embeddings
    . Optimized for semantic similarity
    . Fast + lightweight (ideal for RAG pipelines)
 
 #Language Model:
-** google/flan-t5-base**
+ google/flan-t5-base
    . Instruction-tuned model
    . Great for concise Q&A
    . ~512 token input, ~250 token output
 
 #Vector DB:
-**FAISS**
+ FAISS
    . Efficient similarity search
    . L2-normalized inner product search
