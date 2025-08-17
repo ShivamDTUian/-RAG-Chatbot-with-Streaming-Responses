@@ -28,6 +28,30 @@ flowchart TD
     E --> F[Streamlit Chat UI with Export]
 
 
+**##🛠️ Installation & Setup**
+1. Install Dependencies
+    pip install -r requirements.txt
+
+3. Run Document Preprocessing
+    python src/document_processor.py
+
+
+✔️ Splits documents into chunks
+✔️ Creates chunks/processed_chunks.json
+
+4. Generate Embeddings
+    python src/embeddings_generator.py
+
+
+✔️ Generates embeddings for chunks
+✔️ Saves them in vectordb/
+
+5. Launch Chatbot
+    streamlit run app.py
+
+Now open your browser at http://localhost:8501 🎉
+
+
 **Step-by-Step Flow**
 
 1. Document Preprocessing
