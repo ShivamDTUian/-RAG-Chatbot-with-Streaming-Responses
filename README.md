@@ -28,7 +28,7 @@ flowchart TD
     E --> F[Streamlit Chat UI with Export]
 
 
-**##🛠️ Installation & Setup**
+**## Installation & Setup**
 1. Install Dependencies
     pip install -r requirements.txt
 
