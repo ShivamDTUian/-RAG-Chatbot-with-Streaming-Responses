@@ -75,13 +75,13 @@ Embedding Model:
    . Optimized for semantic similarity
    . Fast + lightweight (ideal for RAG pipelines)
 
-#Language Model:
+Language Model:
  google/flan-t5-base
    . Instruction-tuned model
    . Great for concise Q&A
    . ~512 token input, ~250 token output
 
-#Vector DB:
+Vector DB:
  FAISS
    . Efficient similarity search
    . L2-normalized inner product search
