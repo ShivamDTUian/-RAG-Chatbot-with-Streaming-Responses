@@ -19,7 +19,6 @@ RAG solves this problem by **retrieving context from documents** and grounding t
 
 ## Project Architecture & Flow
 
-```mermaid
 flowchart TD
     A[Raw Documents] --> B[Document Processor - Chunking]
     B --> C[Embeddings Generator - SentenceTransformer]
@@ -100,12 +99,12 @@ Embedding Model:
    . Fast + lightweight (ideal for RAG pipelines)
 
 Language Model:
- google/flan-t5-base
+  **google/flan-t5-base**
    . Instruction-tuned model
    . Great for concise Q&A
    . ~512 token input, ~250 token output
 
 Vector DB:
- FAISS
+  **FAISS**
    . Efficient similarity search
    . L2-normalized inner product search
