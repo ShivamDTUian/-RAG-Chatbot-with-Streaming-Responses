@@ -19,6 +19,7 @@ RAG solves this problem by **retrieving context from documents** and grounding t
 
 ## Project Architecture & Flow
 
+
 flowchart TD
     A[Raw Documents] --> B[Document Processor - Chunking]
     B --> C[Embeddings Generator - SentenceTransformer]
@@ -31,12 +32,14 @@ flowchart TD
 1. Install Dependencies
     pip install -r requirements.txt
 
+
 3. Run Document Preprocessing
     python src/document_processor.py
 
 
 ✔️ Splits documents into chunks
 ✔️ Creates chunks/processed_chunks.json
+
 
 4. Generate Embeddings
     python src/embeddings_generator.py
@@ -45,13 +48,17 @@ flowchart TD
 ✔️ Generates embeddings for chunks
 ✔️ Saves them in vectordb/
 
+
 5. Launch Chatbot
     streamlit run app.py
+
 
 Now open your browser at http://localhost:8501 🎉
 
 
+
 **Step-by-Step Flow**
+
 
 1. Document Preprocessing
 
@@ -66,20 +73,23 @@ Now open your browser at http://localhost:8501 🎉
     Converts each chunk into a 384-dimensional vector
     
     Saves results in vectordb/embeddings.npy and vectordb/metadata.json
+   
 
-3. Vector Database (FAISS)
+4. Vector Database (FAISS)
 
     Creates FAISS index for fast similarity search
     
     Retrieves top-k most relevant chunks for each user query
+   
 
-4. RAG Pipeline (Flan-T5)
+6. RAG Pipeline (Flan-T5)
 
     Takes query + retrieved chunks → creates prompt
     
     Uses google/flan-t5-base to generate grounded answer
+   
 
-5. Streamlit Chatbot
+8. Streamlit Chatbot
 
     Interactive web interface
     
@@ -88,6 +98,7 @@ Now open your browser at http://localhost:8501 🎉
     Displays sources of answer
     
     Allows chat history export (.json)
+   
 
 
 # 🤖 Model & Embedding Choices
@@ -97,12 +108,14 @@ Embedding Model:
    . Produces 384-d embeddings
    . Optimized for semantic similarity
    . Fast + lightweight (ideal for RAG pipelines)
+   
 
 Language Model:
   **google/flan-t5-base**
    . Instruction-tuned model
    . Great for concise Q&A
    . ~512 token input, ~250 token output
+   
 
 Vector DB:
   **FAISS**
